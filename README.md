@@ -10,6 +10,6 @@ make build-and-run
 If already builded:
 make run
 
-If run first time:
+If run first time(after you build project):
 make first-time
 ```
