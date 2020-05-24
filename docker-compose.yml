@@ -1,0 +1,43 @@
+version: '3'
+
+# хранилища
+volumes:
+    pgdata:
+        driver: local
+services:
+    nginx:
+        restart: always
+        image: nginx:latest
+        expose:
+          - 8080
+        ports:
+          - "80:8080"
+        volumes:
+            - ./app/static:/srv/www/app/static
+            - ./app/media:/srv/www/app/media
+            - ./app/logs:/srv/www/app/logs
+            - ./docker/nginx:/etc/nginx/conf.d
+        depends_on:
+            - python
+    python:
+        restart: always
+        env_file:
+            - main.env
+        build:
+            context: .
+            dockerfile: docker/python/Dockerfile
+        volumes:
+            - ./app:/srv/www/app
+        expose:
+            - 8000
+        ports:
+            - 8000:8000
+        command: "gunicorn -c gunicorn.py app.wsgi"
+    postgres:
+        image: postgres:9.3.22
+        ports:
+            - 5432:5432
+        environment:
+            PGDATA: /var/lib/postgresql/data
+        volumes:
+            - pgdata:/var/lib/postgresql/data
