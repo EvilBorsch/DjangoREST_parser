@@ -4,6 +4,9 @@ from .serializers import SearchQuerySerializer
 from .utils.parser.parser import Parser
 
 
+
+
+
 class Company(models.Model):
     guid = models.CharField(max_length=200, primary_key=True)
     ogrn = models.CharField(max_length=100)
@@ -12,6 +15,14 @@ class Company(models.Model):
     address = models.TextField()
     status = models.TextField()
     status_date = models.DateTimeField()
+
+    @staticmethod
+    def get_messages(company_guid):
+        parser=Parser()
+        messages=parser.get_messages(company_guid)
+
+
+
 
     def __str__(self):
         return self.name

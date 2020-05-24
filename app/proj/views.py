@@ -9,6 +9,7 @@ from .models import SearchQuery, Company
 class GetSearchGUIDView(APIView):
     def get(self, request):
         company_name = request.data["company_name"]
+
         """
          because we looking only for 
          first company(i can parse all if u want)
@@ -23,5 +24,8 @@ class GetSearchGUIDView(APIView):
         query = SearchQuery(company_name, guid, company)
         return Response(query.serializeAndSave())
 
-    def post(self, request):
-        data = request.data["searchText"]
+
+class GetMessagesByGUIDView(APIView):
+    def get(self, request):
+        company_guid=request.data["company_guid"]
+        messages=Company.get_messages(company_guid)
