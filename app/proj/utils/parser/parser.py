@@ -43,12 +43,3 @@ class Parser:
         json_data = res2.json()
         return json_data["pageData"]
 
-    def get_guid(self, company_name):
-        json_data = self.get_companys_list_by_name(company_name)
-        page_data = json_data[0]  # because we looking only for first company ( I can parse all if u want)
-
-        for i in page_data:
-            print("key ", i, "val ", page_data[i])
-
-        guid = page_data["guid"]
-        return guid

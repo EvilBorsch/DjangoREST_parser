@@ -4,9 +4,23 @@ from .serializers import SearchQuerySerializer
 from .utils.parser.parser import Parser
 
 
+class Company(models.Model):
+    guid = models.CharField(max_length=200, primary_key=True)
+    ogrn = models.CharField(max_length=100)
+    inn = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
+    address = models.TextField()
+    status = models.TextField()
+    status_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
+
+
 class SearchQuery(models.Model):
     searchText = models.CharField(max_length=200, primary_key=True)
     guid = models.CharField(max_length=200)
+    company = models.ForeignKey(Company,on_delete=models.CASCADE,null=True)
 
     def __str__(self):
         return self.searchText
@@ -29,7 +43,8 @@ class SearchQuery(models.Model):
         return SearchQuerySerializer(self).data
 
     @staticmethod
-    def get_guid_by_search_text(company_name):
+    def get_companys_by_search_text(company_name):
         parser = Parser()
-        guid = parser.get_guid(company_name)
-        return guid
+        companys = parser.get_companys_list_by_name(company_name)
+        return companys
+
