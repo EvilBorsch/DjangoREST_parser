@@ -1,6 +1,6 @@
 from django.db import models
 
-from .serializers import SearchQuerySerializer
+from .serializers import SearchQuerySerializer, MessageSerializer
 from .utils.parser.parser import Parser
 
 
@@ -26,7 +26,8 @@ class Company(models.Model):
                 continue
 
             is_fraze_in = parser.is_text_in(searching_by, str(raw_message))
-            if (not is_fraze_in):
+
+            if searching_by != "" and not (searching_by != "" and is_fraze_in):
                 continue
 
             url = "https://bankrot.fedresurs.ru/MessageWindow.aspx?ID={}".format(raw_message["guid"])
@@ -34,6 +35,7 @@ class Company(models.Model):
                               datePublish=raw_message["datePublish"], text=raw_message["title"], url=url)
             messages.append(message)
             message.save()
+
         return messages
 
     def __str__(self):
@@ -48,6 +50,10 @@ class Message(models.Model):
     text = models.TextField()
     url = models.TextField()
 
+    @staticmethod
+    def serialize(messages):
+        return MessageSerializer(messages, many=True).data
+
     def __str__(self):
         return self.text
 
@@ -55,7 +61,7 @@ class Message(models.Model):
 class SearchQuery(models.Model):
     searchText = models.CharField(max_length=200, primary_key=True)
     guid = models.CharField(max_length=200)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
+    company_guid = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.searchText
@@ -76,8 +82,6 @@ class SearchQuery(models.Model):
     def serializeAndSave(self):
         self.save()
         return SearchQuerySerializer(self).data
-
-    
 
     @staticmethod
     def get_companys_by_search_text(company_name):

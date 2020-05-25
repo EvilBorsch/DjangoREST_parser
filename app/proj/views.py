@@ -1,9 +1,9 @@
 # Create your views here.
-
+from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import SearchQuery, Company
+from .models import SearchQuery, Company, Message
 
 
 class GetSearchGUIDView(APIView):
@@ -20,15 +20,15 @@ class GetSearchGUIDView(APIView):
                           company_raw["address"], company_raw["status"],
                           company_raw["statusDate"])
         guid = company.guid
-        company.save()
+        #company.save()
         query = SearchQuery(company_name, guid, company)
         return Response(query.serializeAndSave())
 
 
 class GetMessagesByGUIDView(APIView):
     def get(self, request):
-        company_guid=request.data["company_guid"]
-        searching_by=request.data["searching_by"]
-        messages=Company.get_messages(company_guid,searching_by)
+        company_guid = request.data["company_guid"]
+        searching_by = request.data["searching_by"]
+        messages = Company.get_messages(company_guid, searching_by)
 
-        return Response({})
+        return Response(Message.serialize(messages))
