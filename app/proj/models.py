@@ -55,8 +55,8 @@ class Message(models.Model):
         return MessageSerializer(messages, many=True).data
 
     @staticmethod
-    def get_messages_from_db(company_guid):
-        messages = Message.objects.filter(company_guid=company_guid)
+    def get_messages_from_db(company_guid, searching_by):
+        messages = Message.objects.filter(company_guid=company_guid, text__contains=searching_by)
         return Message.serialize(messages)
 
     def __str__(self):

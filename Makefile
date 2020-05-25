@@ -16,6 +16,6 @@ migrate:
 first-time:migrate
 
 #createsuperuser
-migrate:
+createsuperuser:
 	docker-compose run python sh -c "python manage.py createsuperuser"
 

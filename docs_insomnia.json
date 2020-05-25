@@ -1,0 +1,160 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-05-25T19:33:39.534Z",
+  "__export_source": "insomnia.desktop.app:v7.1.1",
+  "resources": [
+    {
+      "_id": "req_d4bfe5ed028d481e97c3e756e8b44502",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n\t\"searching_by\": \"результатах\"\n}"
+      },
+      "created": 1590357684013,
+      "description": "Принимает GUID компании и фразу для поиска, выдает сообщения содержащие данную ключевую фразу (если фраза равна пустой строке сообщения ищуется без учета ключевой фразы) и имеющие тип BankruptcyMessage т.е сообщения о банкротстве, а сообщения сохраняются в базу\n\nПример запроса:\n{\n\t\"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n\t\"searching_by\": \"результатах\"\n}\n\n\nПример ответа:\n[\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"0792C36EEF97842AC914EA593B74023B\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2020-03-03T17:05:29.307000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=0792C36EEF97842AC914EA593B74023B\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"2C1936F4299910697F1493D51A990462\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2019-12-02T15:34:24.200000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=2C1936F4299910697F1493D51A990462\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"03CE13FABB3C9EFAA014D80F93EB139C\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2019-10-24T12:39:48.100000Z\",\n    \"text\": \"Сообщение о результатах торгов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=03CE13FABB3C9EFAA014D80F93EB139C\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"C6AABC27F72EF67AA1144185193AF4E2\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2019-09-03T12:07:48.653000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=C6AABC27F72EF67AA1144185193AF4E2\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"99D8B7523B27010B058428C8A977276D\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2019-08-02T12:41:52.427000Z\",\n    \"text\": \"Сообщение о результатах торгов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=99D8B7523B27010B058428C8A977276D\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"5A4DCB1C60C8C9185BA4AE31CE9A1344\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2019-06-04T16:22:39.107000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=5A4DCB1C60C8C9185BA4AE31CE9A1344\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"3E0D7369DBB2EE6AF7F4A72D06F4207A\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2019-04-30T15:58:27.273000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=3E0D7369DBB2EE6AF7F4A72D06F4207A\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"954812D9E00D797B365477BDD0BF7673\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2019-02-05T10:23:13.280000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=954812D9E00D797B365477BDD0BF7673\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"395189FE0DC4B4095BC4CD497F3480FF\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2018-11-02T14:16:27.303000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=395189FE0DC4B4095BC4CD497F3480FF\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"D49DA93CCACB072A6B640FF1C394C892\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2018-08-08T09:25:51.880000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=D49DA93CCACB072A6B640FF1C394C892\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"268D9A935A80BBDA7FB4495A35182C9D\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2018-05-10T09:23:07.740000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=268D9A935A80BBDA7FB4495A35182C9D\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"A125545E85298C4825C43CED8E13C378\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2018-05-04T16:17:27.290000Z\",\n    \"text\": \"Сведения о результатах инвентаризации имущества должника\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=A125545E85298C4825C43CED8E13C378\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"43264E750468070B898416972B75D5A3\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2018-03-19T17:12:09.880000Z\",\n    \"text\": \"Сведения о результатах инвентаризации имущества должника\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=43264E750468070B898416972B75D5A3\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"A240E972080BF4294644D3622C17E694\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2018-02-13T11:46:55.880000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=A240E972080BF4294644D3622C17E694\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"A530288AE46337FB59E43F54204F00AB\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2017-11-13T15:36:24.350000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=A530288AE46337FB59E43F54204F00AB\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"90B319A7DA81463A6F6415A93BE7DC2E\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2017-08-16T16:35:09.423000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=90B319A7DA81463A6F6415A93BE7DC2E\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"6E06DDDA2C9AF558D934A303E7C36DFB\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2017-05-16T16:15:22.477000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=6E06DDDA2C9AF558D934A303E7C36DFB\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"8965899F510713F8B4D46A26D5992BD4\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2017-02-20T17:51:58.940000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=8965899F510713F8B4D46A26D5992BD4\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"BCD71FA0086B9DAB75D48E7425C49367\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2016-11-23T13:30:46.953000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=BCD71FA0086B9DAB75D48E7425C49367\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"AD65EFB4DE6DF058A27467D94031776F\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2016-08-15T10:43:37.607000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=AD65EFB4DE6DF058A27467D94031776F\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"10C12534A11DF328E3F41CD2441E6B7E\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2016-06-14T17:15:46.257000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=10C12534A11DF328E3F41CD2441E6B7E\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"321468579761CBC939D498D87FF059B8\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2016-05-12T22:43:16.153000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=321468579761CBC939D498D87FF059B8\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"04E188BD90383D4BE82455BD78E58757\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2016-03-22T16:32:45.623000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=04E188BD90383D4BE82455BD78E58757\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"965094F443F1535BA7C443DF5BB41518\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2015-12-23T10:38:59.720000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=965094F443F1535BA7C443DF5BB41518\"\n  },\n  {\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\",\n    \"message_guid\": \"4D60BCC7A2A46DEAB6C484A40A21BF20\",\n    \"type\": \"BankruptcyMessage\",\n    \"datePublish\": \"2015-08-11T12:14:51.990000Z\",\n    \"text\": \"Сообщение о результатах проведения собрания кредиторов\",\n    \"url\": \"https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=4D60BCC7A2A46DEAB6C484A40A21BF20\"\n  }\n]",
+      "headers": [
+        {
+          "name": "",
+          "value": "method: GET"
+        },
+        {
+          "name": "",
+          "value": "scheme: https"
+        },
+        {
+          "name": "",
+          "value": "authority: bankrot.fedresurs.ru"
+        },
+        {
+          "name": "",
+          "value": "path: /MessageWindow.aspx?ID=4896F6B2FED906EAED1456B19D91B16E"
+        },
+        {
+          "name": "Cookie",
+          "value": "bankrotcookie=1be986aa5859779f39162c44fea9141f; fedresurscookie=fd12ccc956f1691105b17f8f491baa18; ASP.NET_SessionId=ozoh0fufwhoj3j3t35bgwzn1"
+        },
+        {
+          "name": "Accept",
+          "value": "image/png,image/svg+xml,image/*;q=0.8,video/*;q=0.8,*/*;q=0.5"
+        },
+        {
+          "name": "Accept-Encoding",
+          "value": "gzip, deflate, br"
+        },
+        {
+          "name": "Host",
+          "value": "bankrot.fedresurs.ru"
+        },
+        {
+          "name": "User-Agent",
+          "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15"
+        },
+        {
+          "name": "Accept-Language",
+          "value": "ru"
+        },
+        {
+          "name": "Referer",
+          "value": "https://bankrot.fedresurs.ru/MessageWindow.aspx?ID=4896F6B2FED906EAED1456B19D91B16E"
+        },
+        {
+          "name": "Connection",
+          "value": "keep-alive"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1590357684013,
+      "method": "GET",
+      "modified": 1590434947884,
+      "name": "get_message",
+      "parameters": [],
+      "parentId": "wrk_806c18b4b4c945e9a363016ebcd64ff9",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "http://localhost/api/get_messages",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_806c18b4b4c945e9a363016ebcd64ff9",
+      "created": 1585573042122,
+      "description": "",
+      "modified": 1585573042122,
+      "name": "test",
+      "parentId": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_1b842f1b3e154b629cfd558ebf50fa15",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"company_name\": \"реал\"\n}"
+      },
+      "created": 1590269201050,
+      "description": "Получение GUID ПЕРВОЙ компании в поиске (я могу искать и GUID всех если нужно), возвращает json с поисковым запросом и guid компании, а так же сохраняет эту информацию в базу и сохраняет всю информацию о компании в базу\n\n\nПример запроса:\n{\n\t\"company_name\": \"реал\"\n}\n\nПример ответа\n[\n  {\n    \"searchText\": \"реал\",\n    \"company_guid\": \"a82731ea-291d-4cc2-a11c-763f3a6dd421\"\n  }\n]\n",
+      "headers": [
+        {
+          "id": "pair_8334aafe6757447cbcaea698b8aa209b",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1590269201050,
+      "method": "GET",
+      "modified": 1590434536195,
+      "name": "getasd",
+      "parameters": [],
+      "parentId": "wrk_806c18b4b4c945e9a363016ebcd64ff9",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "http://localhost/api/get_guid",
+      "_type": "request"
+    },
+    {
+      "_id": "env_c1a24380d7eedd92c50782e02c67e5f99f61030f",
+      "color": null,
+      "created": 1585573042252,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1585573042252,
+      "modified": 1585573042252,
+      "name": "Base Environment",
+      "parentId": "wrk_806c18b4b4c945e9a363016ebcd64ff9",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_c1a24380d7eedd92c50782e02c67e5f99f61030f",
+      "cookies": [
+        {
+          "creation": "2020-05-23T21:16:17.606Z",
+          "domain": "domain.com",
+          "expires": null,
+          "id": "7136298675728261",
+          "key": "foo",
+          "path": "/",
+          "value": "bar"
+        }
+      ],
+      "created": 1585573042258,
+      "modified": 1590432958854,
+      "name": "Default Jar",
+      "parentId": "wrk_806c18b4b4c945e9a363016ebcd64ff9",
+      "_type": "cookie_jar"
+    }
+  ]
+}

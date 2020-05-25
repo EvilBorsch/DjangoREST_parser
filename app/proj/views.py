@@ -13,8 +13,10 @@ class GetSearchGUIDView(APIView):
          because we looking only for first company in list i add only first
          first company(i can parse all if u want)
         """
-        query = SearchQuery.get_by_search_text(company_name)
+
+        query = SearchQuery.get_by_search_text(company_name)  # get from db
         if (query == []):
+            # get Guid form fedres site
             raw_companys_list = SearchQuery.get_companys_by_search_text(company_name)
             if (raw_companys_list == []):
                 return Response([])
@@ -32,8 +34,9 @@ class GetMessagesByGUIDView(APIView):
     def get(self, request):
         company_guid = request.data["company_guid"]
         searching_by = request.data["searching_by"]
-        messages = Message.get_messages_from_db(company_guid)
+        messages = Message.get_messages_from_db(company_guid, searching_by)
         if (messages == []):
+            # Get messages from fedres site
             messages = Company.get_messages(company_guid, searching_by)
 
             return Response(Message.serialize(messages))
