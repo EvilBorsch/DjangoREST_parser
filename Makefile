@@ -14,3 +14,8 @@ migrate:
 
 #run if app runns first time
 first-time:migrate
+
+#createsuperuser
+migrate:
+	docker-compose run python sh -c "python manage.py createsuperuser"
+

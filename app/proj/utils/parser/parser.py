@@ -1,5 +1,6 @@
-import requests
 import re
+
+import requests
 
 
 class Parser:
@@ -29,6 +30,8 @@ class Parser:
         }
         res2 = self.s.post('https://fedresurs.ru/backend/companies/search', data=query_data.encode('utf-8'),
                            headers=hed)
+        if (res2.status_code != 200):
+            return []
         json_data = res2.json()
         return json_data["pageData"]
 
@@ -61,6 +64,8 @@ class Parser:
             'Connection': 'keep-alive'}
         res = self.s.post('https://fedresurs.ru/backend/companies/publications', data=query_data.encode('utf-8'),
                           headers=headers)
+        if (res.status_code != 200):
+            return []
         res_json = res.json()
         number_of_messages = res_json["found"]
         if (int(number_of_messages) > page_size):

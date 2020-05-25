@@ -15,9 +15,9 @@ class Company(models.Model):
 
     @staticmethod
     def get_messages(company_guid, searching_by):
-        # TODO check in db
         parser = Parser()
         messages_raw = parser.get_messages(company_guid)
+
         messages = list()
         for raw_message in messages_raw:
 
@@ -54,32 +54,29 @@ class Message(models.Model):
     def serialize(messages):
         return MessageSerializer(messages, many=True).data
 
+    @staticmethod
+    def get_messages_from_db(company_guid):
+        messages = Message.objects.filter(company_guid=company_guid)
+        return Message.serialize(messages)
+
     def __str__(self):
         return self.text
 
 
 class SearchQuery(models.Model):
     searchText = models.CharField(max_length=200, primary_key=True)
-    guid = models.CharField(max_length=200)
-    company_guid = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
+    company_guid = models.CharField(max_length=200)
 
     def __str__(self):
         return self.searchText
 
     @staticmethod
-    def getAll():
-        querys = SearchQuery.objects.all()
+    def get_by_search_text(searchText):
+        querys = SearchQuery.objects.filter(searchText=searchText)
         serializedData = SearchQuerySerializer(querys, many=True).data
         return serializedData
 
-    @staticmethod
-    def getBySearchText(text):
-        querys = SearchQuery.objects.filter(searchText=text)
-        serializedData = SearchQuerySerializer(querys, many=True).data
-
-        return serializedData
-
-    def serializeAndSave(self):
+    def serialize_and_save(self):
         self.save()
         return SearchQuerySerializer(self).data
 
