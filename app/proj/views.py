@@ -28,4 +28,7 @@ class GetSearchGUIDView(APIView):
 class GetMessagesByGUIDView(APIView):
     def get(self, request):
         company_guid=request.data["company_guid"]
-        messages=Company.get_messages(company_guid)
+        searching_by=request.data["searching_by"]
+        messages=Company.get_messages(company_guid,searching_by)
+
+        return Response({})

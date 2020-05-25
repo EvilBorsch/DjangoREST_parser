@@ -1,4 +1,5 @@
 import requests
+import re
 
 
 class Parser:
@@ -30,6 +31,12 @@ class Parser:
                            headers=hed)
         json_data = res2.json()
         return json_data["pageData"]
+
+    def is_text_in(self, searching_word, incoming_text):
+        re_query = '\\b{}\\b'.format(searching_word)
+        if re.search(re_query, incoming_text):
+            return True
+        return False
 
     def get_messages(self, guid):
         page_size = 500
